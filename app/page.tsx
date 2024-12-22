@@ -2,7 +2,6 @@ import Head from "next/head";
 import { fetchTopAlbums } from "../lib/data";
 import Title from "./_components/Title/Title";
 import List from "./_components/List/List";
-import Item from "./_components/Item/Item";
 
 export default async function Home() {
   const albums = await fetchTopAlbums();
@@ -17,11 +16,7 @@ export default async function Home() {
       </Head>
       <main style={{ backgroundColor: "#000" }}>
         <Title title={title} />
-        <List>
-          {albums.map((album) => (
-            <Item key={album.id} album={album} />
-          ))}
-        </List>
+        <List data={albums} />      
       </main>
     </div>
   );
