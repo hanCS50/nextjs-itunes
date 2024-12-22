@@ -6,16 +6,17 @@ import Item from "./_components/Item/Item";
 
 export default async function Home() {
   const albums = await fetchTopAlbums();
+  const title = "iTunes Top Albums";
 
   return (
     <div>
       <Head>
-        <title>iTunes Top Albums</title>
+        <title>{title}</title>
         <meta name="description" content="List of iTunes Top Albums" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <Title title={"iTunes Top Albums"} />
+      <main style={{ backgroundColor: "#000" }}>
+        <Title title={title} />
         <List>
           {albums.map((album) => (
             <Item key={album.id} album={album} />
