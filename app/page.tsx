@@ -8,8 +8,12 @@ import {
   CodeTag,
 } from "./_components/sharedstyles";
 import Cards from "./_components/cards";
+import { fetchTopAlbums } from "../lib/data";
 
-export default function Home() {
+export default async function Home() {
+  const albums = await fetchTopAlbums();
+  console.log('albums', albums);
+
   return (
     <Container>
       <Head>
