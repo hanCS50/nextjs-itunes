@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
+import { debounce } from '../../../lib/utils';
 import { SearchContainer, SearchInput } from './Search.styles';
 
 type SearchProps = {
@@ -10,12 +11,17 @@ type SearchProps = {
 const Search = ({ onSearch }: SearchProps) => {
   const [query, setQuery] = useState('');
 
+  const debouncedSearch = useCallback(
+    debounce((query: string) => {
+      onSearch(query);
+    }, 500),
+    []
+  );
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    setQuery(e.target.value);
-
-    // add a Debounce here
-    onSearch(e.target.value);
+    setQuery(value);
+    debouncedSearch(value)
   };
 
   return (
