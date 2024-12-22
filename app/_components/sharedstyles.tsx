@@ -1,22 +1,8 @@
 import styled from "styled-components";
 
-const Container = styled.div`
-  padding: 0 0.5rem;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  min-height: 100vh;
-`;
-const Main = styled.main`
-  padding: 5rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
+const Container = styled.div``;
+
+const Main = styled.main``;
 
 const Title = styled.h1`
   margin: 0;
@@ -24,38 +10,40 @@ const Title = styled.h1`
   font-size: 4rem;
   text-align: center;
   text-decoration: none;
-
-  a {
-    color: ${({ theme }) => theme.colors.secondary};
-    text-decoration: none;
-    &:hover,
-    :focus,
-    :active {
-      text-decoration: underline;
-    }
-  }
 `;
 
-const Description = styled.p`
-  text-align: center;
-  line-height: 1.5;
-  font-size: 1.5rem;
-`;
-const CodeTag = styled.code`
-  background: #fafafa;
-  border-radius: 5px;
-  margin: 0 0.75rem;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family:
-    Menlo,
-    Monaco,
-    Lucida Console,
-    Liberation Mono,
-    DejaVu Sans Mono,
-    Bitstream Vera Sans Mono,
-    Courier New,
-    monospace;
+const List = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+  padding-left: 0;
+  margin: 0 20px 0 20px;
+  list-style-type: none;
 `;
 
-export { Container, Main, Title, Description, CodeTag };
+const Item = styled.li`
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+`;
+
+const ItemWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+`;
+
+const ItemTitle = styled.h3`
+  font-size: 16px;
+  margin-top: 10px;
+`;
+
+const ItemSubtitle = styled.p`
+  font-size: 14px;
+  color: #555;
+`;
+
+export { Container, Main, Title, List, Item, ItemWrapper, ItemTitle, ItemSubtitle };
