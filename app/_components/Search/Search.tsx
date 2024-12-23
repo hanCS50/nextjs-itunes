@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import React, { useState, useCallback } from 'react';
-import { debounce } from '../../../lib/utils';
-import { SearchContainer, SearchInput } from './Search.styles';
+import React, { useState, useCallback } from "react";
+import { debounce } from "../../../lib/utils";
+import { SearchContainer, SearchInput, Button } from "./Search.styles";
 
 type SearchProps = {
   onSearch: (query: string) => void;
 };
 
 const Search = ({ onSearch }: SearchProps) => {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
 
   const debouncedSearch = useCallback(
     debounce((query: string) => {
@@ -21,7 +21,7 @@ const Search = ({ onSearch }: SearchProps) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setQuery(value);
-    debouncedSearch(value)
+    debouncedSearch(value);
   };
 
   return (
@@ -31,14 +31,9 @@ const Search = ({ onSearch }: SearchProps) => {
         value={query}
         onChange={handleChange}
         placeholder="Search Albums..."
-        style={{
-          padding: '10px',
-          fontSize: '16px',
-          borderRadius: '8px',
-          border: '1px solid #ddd',
-          width: '300px',
-        }}
+        aria-label="Search Albums"
       />
+      <Button aria-label="Start Search">Search!</Button>
     </SearchContainer>
   );
 };

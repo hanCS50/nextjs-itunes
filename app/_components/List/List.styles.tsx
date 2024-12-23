@@ -21,3 +21,10 @@ export const StyledList = styled.ul`
     margin: 0 10px;
   }
 `;
+
+export const NoMatch = styled.p`
+  margin: 20px;
+  font-size: 19.2px;
+  text-align: center;
+  color: #fff;
+`;

@@ -54,3 +54,9 @@ export const ItemSubtitle = styled.p`
     font-size: 12px;
   }
 `;
+
+export const ExternalLink = styled.a`
+  color: #d60017;
+  font-size: 14px;
+  text-decoration: none;
+`;

@@ -1,29 +1,35 @@
-"use client"
+"use client";
 
-import React from 'react';
+import React from "react";
 import Image from "next/image";
 import { Album } from "../../../lib/data";
-import { StyledItem, ItemWrapper, ItemTitle, ItemSubtitle } from "./Item.styles";
+import {
+  StyledItem,
+  ItemWrapper,
+  ItemTitle,
+  ItemSubtitle,
+  ExternalLink,
+} from "./Item.styles";
 
 type AlbumProps = {
-    album: Album;
-}
+  album: Album;
+};
 
 const Item = ({ album }: AlbumProps) => {
   return (
-    <StyledItem key={album.id}>
-      <Image
-        src={album.imageUrl}
-        alt={album.title}
-        width={170}
-        height={170}
-      />
+    <StyledItem key={album.id} role="listitem">
+      <Image src={album.imageUrl} alt={album.title} width={170} height={170} />
       <ItemWrapper>
         <ItemTitle>{album.title}</ItemTitle>
         <ItemSubtitle>{album.artist}</ItemSubtitle>
-        <a href={album.url} target="_blank" rel="noopener noreferrer">
+        <ExternalLink
+          href={album.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`View "${album.title}" on iTunes`} 
+        >
           View on iTunes
-        </a>
+        </ExternalLink>
       </ItemWrapper>
     </StyledItem>
   );
