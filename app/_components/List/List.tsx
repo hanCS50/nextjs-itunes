@@ -4,7 +4,8 @@ import React, { useState, useEffect } from "react";
 import { Album } from "@/lib/data";
 import Item from "../Item/Item";
 import Search from "../Search/Search";
-import { StyledList, NoMatch } from "./List.styles";
+import NoMatch from "../NoMatchFound/NoMatchFound";
+import { StyledList } from "./List.styles";
 
 type ListProps = {
   data: Album[];
@@ -42,13 +43,14 @@ const List = ({ data }: ListProps) => {
   return (
     <>
       <Search onSearch={setSearchQuery} />
-      <StyledList role="list">
-        {filteredAlbums.length > 0 ? (
-          filteredAlbums.map((album) => <Item key={album.id} album={album} />)
-        ) : (
-          <NoMatch>No albums found matching the query.</NoMatch>
-        )}
-      </StyledList>
+      {filteredAlbums.length === 0 && <NoMatch message={"No match found."} />}
+      {filteredAlbums.length > 0 && (
+        <StyledList role="list">
+          {filteredAlbums.map((album) => (
+            <Item key={album.id} album={album} />
+          ))}
+        </StyledList>
+      )}
     </>
   );
 };
