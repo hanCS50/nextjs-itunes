@@ -4,17 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import "./page.css";
 
-type AlbumPageProps = {
-  params: Promise<{ id: string }>
-};
-
 /**
  * This is a server side rendered page that fetches album details based on the album ID.
  * Unable to use styled-components because it is not supported in the server side rendering.
  */
-export default async function AlbumPage({ params }: AlbumPageProps) {
+export default async function AlbumPage(props: { params: Promise<{ id: string }> }) {
   // Await the params before using
-  const resolvedParams = await params;
+  const resolvedParams = await props.params;
   const albumId = resolvedParams.id;
   
   const albumDetails: AlbumDetails = await fetchAlbumDetails(albumId);
