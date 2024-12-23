@@ -6,15 +6,15 @@ import Item from "../Item/Item";
 import Search from "../Search/Search";
 import NoMatch from "../NoMatchFound/NoMatchFound";
 import Pagination from "../Pagination/Pagination";
-import { ListContainer, StyledList } from "./List.styles";
+import { ListContainer, StyledList } from "./BrowseAlbums.styles";
 
-type ListProps = {
+type BrowseAlbumsProps = {
   data: Album[];
 };
 
 const ITEMS_PER_PAGE = 8;
 
-const List = ({ data }: ListProps) => {
+const BrowseAlbums = ({ data }: BrowseAlbumsProps) => {
   const [initialAlbums, setInitialAlbums] = useState<Album[]>(data);
   const [filteredAlbums, setFilteredAlbums] = useState<Album[]>(initialAlbums);
   const [searchQuery, setSearchQuery] = useState("");
@@ -94,4 +94,4 @@ const List = ({ data }: ListProps) => {
   );
 };
 
-export default List;
+export default BrowseAlbums;
