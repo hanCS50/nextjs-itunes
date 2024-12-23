@@ -16,6 +16,7 @@ export const PageButton = styled.button<{ disabled: boolean }>`
   border-radius: 4px;
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   margin: 0 10px;
+  width: 123px;
 
   &:hover {
     background-color: ${({ disabled }) => (disabled ? "#ccc" : "#7c0310")};
