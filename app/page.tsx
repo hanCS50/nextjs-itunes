@@ -1,10 +1,10 @@
 import Head from "next/head";
-import { fetchTopAlbums } from "../lib/data";
+import { fetchTopAlbums, Album } from "../lib/data";
 import Title from "./_components/Title/Title";
 import List from "./_components/List/List";
 
 export default async function Home() {
-  const albums = await fetchTopAlbums();
+  const albums: Album[] = await fetchTopAlbums();
   const title = "iTunes Top Albums";
 
   return (

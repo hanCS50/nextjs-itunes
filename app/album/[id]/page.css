@@ -1,0 +1,117 @@
+/* Mobile Styles (default) */
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.albumTitle {
+  text-align: center;
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.albumImageContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.albumInfoSection {
+  margin: 15px 0;
+}
+
+.sectionHeading {
+  font-size: 20px;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.infoText {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.button {
+  display: inline-block;
+  padding: 8px 16px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 20px;
+  max-width: 170px;
+  width: 100%;
+}
+
+.exploreLink {
+  background-color: #d60017;
+
+  &:hover {
+    background-color: #b40316;
+  }
+}
+
+.backToHomeLink {
+  background-color: #0070f3;
+
+  &:hover {
+    background-color: #005bb5;
+  }
+}
+
+/* Tablet Styles (min-width: 768px) */
+@media (min-width: 768px) {
+  .albumTitle {
+      font-size: 28px;
+      margin-bottom: 18px;
+  }
+
+  .albumImageContainer {
+      margin-bottom: 18px;
+  }
+
+  .sectionHeading {
+      font-size: 26px;
+  }
+
+  .infoText {
+      font-size: 18px;
+  }
+}
+
+/* Desktop Styles (min-width: 1025px) */
+@media (min-width: 1025px) {
+  .albumTitle {
+      font-size: 32px;
+      margin-bottom: 20px;
+  }
+
+  .albumImageContainer {
+      margin-bottom: 20px;
+  }
+
+  .sectionHeading {
+      font-size: 29px;
+  }
+
+  .infoText {
+      font-size: 19px;
+  }
+}
+  

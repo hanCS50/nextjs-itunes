@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Album } from "../../../lib/data";
 import {
   StyledItem,
@@ -18,7 +19,14 @@ type AlbumProps = {
 const Item = ({ album }: AlbumProps) => {
   return (
     <StyledItem key={album.id} role="listitem">
-      <Image src={album.imageUrl} alt={album.title} width={170} height={170} />
+      <Link href={`/album/${album.id}`}>
+        <Image
+          src={album.imageUrl}
+          alt={album.title}
+          width={170}
+          height={170}
+        />
+      </Link>
       <ItemWrapper>
         <ItemTitle>{album.title}</ItemTitle>
         <ItemSubtitle>{album.artist}</ItemSubtitle>
@@ -26,7 +34,7 @@ const Item = ({ album }: AlbumProps) => {
           href={album.url}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`View "${album.title}" on iTunes`} 
+          aria-label={`View "${album.title}" on iTunes`}
         >
           View on iTunes
         </ExternalLink>
