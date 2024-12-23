@@ -2,7 +2,7 @@
 
 import { ReactNode } from "react";
 import { ThemeProvider, type DefaultTheme } from "styled-components";
-import GlobalStyle from "@/app/_components/globalstyles";
+import GlobalStyle from "@/app/components/globalstyles";
 
 const theme: DefaultTheme = {
   colors: {

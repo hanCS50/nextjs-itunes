@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { fetchTopAlbums, Album } from "../lib/data";
-import Title from "./_components/Title/Title";
-import List from "./_components/List/List";
+import Title from "./components/Title/Title";
+import List from "./components/List/List";
 
 export default async function Home() {
   const albums: Album[] = await fetchTopAlbums();
