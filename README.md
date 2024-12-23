@@ -1,35 +1,71 @@
-# Example app with styled-components
+# iTunes Top Albums
 
-This example features how you use a different styling solution than [styled-jsx](https://github.com/vercel/styled-jsx) that also supports universal styles. That means we can serve the required styles for the first render within the HTML and then load the rest in the client. In this case we are using [styled-components](https://github.com/styled-components/styled-components).
+This app allows users to browse and search for the top albums on iTunes. It fetches data from the iTunes RSS feed and displays it in a responsive grid layout. The app also provides detailed information about each album, including a link to view the album on iTunes.
 
-This example uses the Rust-based [SWC](https://nextjs.org/docs/advanced-features/compiler#styled-components) in Next.js for better performance than Babel.
+Features
 
-Currently, only the `ssr` and `displayName` transforms have been implemented. These two transforms are the main requirement for using `styled-components` in Next.js.
+    Top Albums Feed: Displays the current top 100 albums from iTunes.
+    Search Functionality: Search for albums or artists in the list of top albums.
+    Debounce: To improve performance and limit the number of API calls made during search (in the case a network request was being made).
+    Album Details: Click on an album image to view more details about the album.
+    Pagination: Navigate through the album list with pagination.
+    External Links: From the album details page, you can view the album on iTunes.
+    Back to Home: A link to navigate back to the home page.
+    Mobile-First Design: The app is designed to be responsive, with a mobile-first approach.
+    Accessibility: The app includes ARIA labels for better accessibility.
 
-## Deploy your own
+## Tech Stack
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-styled-components)
+    Next.js 15: A React framework for building server-rendered and statically generated applications.
+    Styled-Components: For styling React components using tagged template literals.
+    Debounce: Used to limit the frequency of API calls when searching.
+    ARIA Accessibility: Added for enhanced accessibility (screen readers, etc.).
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-styled-components&project-name=with-styled-components&repository-name=with-styled-components)
+## Installation
 
-## How to use
+    Clone the repository
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-styled-components with-styled-components-app
+```
+git clone https://github.com/hanCS50/nextjs-itunes.git
 ```
 
-```bash
-yarn create next-app --example with-styled-components with-styled-components-app
+## Install dependencies
+
+```
+cd nextjs-itunes
+npm install
 ```
 
-```bash
-pnpm create next-app --example with-styled-components with-styled-components-app
+    Run the development server
+
+```
+npm run dev
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+Visit the app at http://localhost:3000
 
-### Try it on CodeSandbox
+How It Works
 
-[Open this example on CodeSandbox](https://codesandbox.io/s/github/vercel/next.js/tree/canary/examples/with-styled-components)
+This app fetches the top 100 albums from iTunes using the following RSS feed:
+
+    https://itunes.apple.com/us/rss/topalbums/limit=100/json
+
+Home Page
+
+    Displays a grid of the top 100 albums.
+    Allows users to search by artist name or album title.
+    Pagination is enabled to navigate through the album list.
+
+Album Details Page
+
+    Clicking on an album cover opens a details page where more information about the album is displayed, such as the artist, genre, release date, and price.
+    On the album details page, users can view the album on iTunes through an external link.
+    A "Back to Home" button navigates the user back to the main album list.
+
+Pagination
+
+    The album list is paginated to navigate between pages of albums.
+
+License
+
+This project is licensed under the MIT License
