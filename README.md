@@ -6,7 +6,7 @@ Features
 
     Top Albums Feed: Displays the current top 100 albums from iTunes.
     Search Functionality: Search for albums or artists in the list of top albums.
-    Debounce: To improve performance and limit the number of API calls made during search (in the case a network request was being made).
+    Debounce: To improve performance and limit the number of API calls made during search (in the scenario if network request were being made).
     Album Details: Click on an album image to view more details about the album.
     Pagination: Navigate through the album list with pagination.
     External Links: From the album details page, you can view the album on iTunes.
@@ -14,12 +14,10 @@ Features
     Mobile-First Design: The app is designed to be responsive, with a mobile-first approach.
     Accessibility: The app includes ARIA labels for better accessibility.
 
-## Tech Stack
+## Technology
 
-    Next.js 15: A React framework for building server-rendered and statically generated applications.
-    Styled-Components: For styling React components using tagged template literals.
-    Debounce: Used to limit the frequency of API calls when searching.
-    ARIA Accessibility: Added for enhanced accessibility (screen readers, etc.).
+This application was built using Next.js with-styled-components boilerplate code
+https://github.com/vercel/next.js/tree/canary/examples/with-styled-components
 
 ## Installation
 
