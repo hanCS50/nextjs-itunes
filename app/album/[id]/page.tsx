@@ -5,9 +5,7 @@ import Link from "next/link";
 import "./page.css";
 
 type AlbumPageProps = {
-  params: {
-    id: string;
-  };
+  params: Promise<{ id: string }>
 };
 
 /**
@@ -15,8 +13,11 @@ type AlbumPageProps = {
  * Unable to use styled-components because it is not supported in the server side rendering.
  */
 export default async function AlbumPage({ params }: AlbumPageProps) {
+  // Await the params before using
+  const resolvedParams = await params;
+  const albumId = resolvedParams.id;
   
-  const albumDetails: AlbumDetails = await fetchAlbumDetails(params.id);
+  const albumDetails: AlbumDetails = await fetchAlbumDetails(albumId);
   const {
     title,
     artist,
