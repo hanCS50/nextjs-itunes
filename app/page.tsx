@@ -14,7 +14,7 @@ export default async function Home() {
         <meta name="description" content="Browse iTunes Top Albums" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main style={{ backgroundColor: "#000", minHeight: '100vh' }}>
+      <main style={{ backgroundColor: "#000", minHeight: '100vh', minWidth: '375px' }}>
         <Title title={title} />
         <BrowseAlbums data={albums} />      
       </main>
