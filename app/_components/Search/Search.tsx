@@ -30,7 +30,7 @@ const Search = ({ onSearch }: SearchProps) => {
         type="text"
         value={query}
         onChange={handleChange}
-        placeholder="Search Albums..."
+        placeholder="Search by Artist or Album..."
         aria-label="Search Albums"
       />
       <Button aria-label="Start Search">Search!</Button>
