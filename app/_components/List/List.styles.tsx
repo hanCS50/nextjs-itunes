@@ -1,23 +1,33 @@
 "use client";
 import styled from "styled-components";
 
+export const ListContainer = styled.div`
+  padding: 20px;
+`;
+
 export const StyledList = styled.ul`
+  max-width: 1400px;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: 1fr; /* 1 column */
   gap: 20px;
   padding-left: 0;
-  margin: 0 20px;
+
   list-style-type: none;
   padding-bottom: 40px;
 
-  // Tablet layout: reduce columns to fit the screen size
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  // Tablet layout
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, minmax(250px, 1fr)); /* 2 columns */
   }
 
-  // Mobile layout: single column
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    margin: 0 10px;
+  // Desktop layout
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, minmax(250px, 1fr)); /* 3 columns */
+  }
+
+  // Large Desktop layout
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(4, minmax(250px, 1fr)); /* 4 columns max */
   }
 `;

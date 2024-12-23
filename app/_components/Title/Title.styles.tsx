@@ -4,10 +4,11 @@ import styled from "styled-components";
 export const StyledTitle = styled.h1`
   margin: 0;
   padding: 20px;
-  font-size: 64px;
+  font-size: 40px;
   text-align: center;
   font-family: "Playfair Display", serif;
   color: #d60017;
+  transition: font-size 0.3s ease-in-out;
   animation: shimmer 1.5s ease-in-out infinite;
 
   @keyframes shimmer {
@@ -26,12 +27,12 @@ export const StyledTitle = styled.h1`
   }
 
   // Tablet size
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     font-size: 48px; 
   }
 
-  // Mobile size
-  @media (max-width: 480px) {
-    font-size: 40px;
+  // Desktop size
+  @media (min-width: 1024px) {
+    font-size: 64px;
   }
 `;

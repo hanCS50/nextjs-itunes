@@ -6,7 +6,7 @@ import Item from "../Item/Item";
 import Search from "../Search/Search";
 import NoMatch from "../NoMatchFound/NoMatchFound";
 import Pagination from "../Pagination/Pagination";
-import { StyledList } from "./List.styles";
+import { ListContainer, StyledList } from "./List.styles";
 
 type ListProps = {
   data: Album[];
@@ -82,11 +82,13 @@ const List = ({ data }: ListProps) => {
       )}
 
       {filteredAlbums.length > 0 && (
-        <StyledList role="list">
-          {paginatedAlbums.map((album) => (
-            <Item key={album.id} album={album} />
-          ))}
-        </StyledList>
+        <ListContainer>
+          <StyledList role="list">
+            {paginatedAlbums.map((album) => (
+              <Item key={album.id} album={album} />
+            ))}
+          </StyledList>
+        </ListContainer>
       )}
     </>
   );
