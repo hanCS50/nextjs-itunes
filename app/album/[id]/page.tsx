@@ -15,8 +15,8 @@ type AlbumPageProps = {
  * Unable to use styled-components because it is not supported in the server side rendering.
  */
 export default async function AlbumPage({ params }: AlbumPageProps) {
-  const { id } = await params;
-  const albumDetails: AlbumDetails = await fetchAlbumDetails(id);
+  
+  const albumDetails: AlbumDetails = await fetchAlbumDetails(params.id);
   const {
     title,
     artist,
